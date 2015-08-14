@@ -40,13 +40,12 @@ describe(Word) do
     end
   end
 
-  # describe('.clear') do
-  #   it('clears the array of all entries') do
-  #     Word.new('definition', 'noun', 'def i ni tion')
-  #     Word.save()
-  #     Word.clear()
-  #     expect(Word.all()).to(eq([]))
-  #   end
-  # end
+  describe('.clear') do
+    it('clears the array of all entries') do
+      Word.new('definition', 'noun', 'def i ni tion').save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
 
 end
