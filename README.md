@@ -26,7 +26,7 @@ _{Tis app uses the technologies : Ruby, Capybara, Sinatra, Heroku... among other
 
 *{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
 
-Copyright (c) 2015 **_{List of contribtors}_**
+Copyright (c) 2015 **_{Carlo De Gregorio}_**
 
 This software is licensed under the MIT license.
 
