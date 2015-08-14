@@ -44,6 +44,8 @@ describe(Word) do
   end
 
 
+
+
   describe(".all") do
     it("returns all entries, is empty at first") do
       expect(Word.all()).to(eq([]))

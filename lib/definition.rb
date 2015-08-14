@@ -1,10 +1,34 @@
-A definition is a statement of the meaning of a term (a word, phrase, or other set of symbols).
-quaggy
-"marshy or flabby"
+class Definition
 
+  @@definitions = []
 
-an explanation of the meaning of a word, phrase, etc. : a statement that defines a word, phrase, etc.
+  attr_reader(:definition, :id)
 
-: a statement that describes what something is
+  define_method(:initialize) do |attributes|
+    @definition = attributes.fetch(:definition)
+    @id = @@definitions.length().+(1)
+  end
 
-: a clear or perfect example of a person or thing
+  define_method(:save) do
+    @@definitions.push(self)
+  end
+
+  define_singleton_method(:all) do
+    @@definitions
+  end
+
+  define_singleton_method(:clear) do
+    @@definitions = []
+  end
+
+  define_singleton_method(:find) do |identifyer|
+    found_definition = nil
+    @@definitions.each() do |definition|
+      if definition.id == identifyer
+        found_definition = definition
+      end
+    end
+    found_definition
+  end
+
+end

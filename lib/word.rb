@@ -8,7 +8,7 @@ class Word
     @word = attributes.fetch(:word)
     @type = attributes.fetch(:type)
     @syllable = attributes.fetch(:syllable)
-    # @definition = []
+    @definitions = []
     @id = @@words.length().+(1)
   end
 
@@ -38,9 +38,9 @@ class Word
     found_word
   end
 
-  # define_method(:add_definition) do |definition|
-  #   @definition.push(definitiion)
-  # end
+  define_method(:add_definition) do |definition|
+    @definitions.push(definitiion)
+  end
 
 
 end
