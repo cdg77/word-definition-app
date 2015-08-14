@@ -1,27 +1,16 @@
 class Word
+
+  attr_reader(:word, :type, :syllable, :id, :definition)
+
   @@words = []
 
-  define_method(:initialize) do | word, type, syllable |
-
-    @word = word
-    @type = type
-    @syllable = syllable
-    @definition = []
+  define_method(:initialize) do |attributes|
+    @word = attributes.fetch(:word)
+    @type = attributes.fetch(:type)
+    @syllable = attributes.fetch(:syllable)
+    # @definition = []
     @id = @@words.length().+(1)
   end
-
-  define_method(:type) do
-    @type
-  end
-
-  define_method(:syllable) do
-    @syllable
-  end
-
-  define_method(:word) do
-    @word
-  end
-
 
   define_method(:save) do
     @@words.push(self)
@@ -48,6 +37,10 @@ class Word
     end
     found_word
   end
+
+  # define_method(:add_definition) do |definition|
+  #   @definition.push(definitiion)
+  # end
 
 
 end
