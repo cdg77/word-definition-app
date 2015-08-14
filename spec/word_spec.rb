@@ -2,6 +2,9 @@ require('rspec')
 require ('word')
 
 describe(Word) do
+  before() do
+    Word.clear()
+  end
 
   describe('#type') do
     it('returns the type of word') do
@@ -30,5 +33,20 @@ describe(Word) do
       expect(test_word.save).to(eq([test_word]))
     end
   end
+
+  describe(".all") do
+    it("returns all entries, is empty at first") do
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
+  # describe('.clear') do
+  #   it('clears the array of all entries') do
+  #     Word.new('definition', 'noun', 'def i ni tion')
+  #     Word.save()
+  #     Word.clear()
+  #     expect(Word.all()).to(eq([]))
+  #   end
+  # end
 
 end
