@@ -34,6 +34,15 @@ describe(Word) do
     end
   end
 
+  describe('#id') do
+      it('returns the id associated with a word') do
+        test_word = Word.new('definition', 'noun', 'def i ni tion')
+        test_word.save()
+        expect(test_word.id()).to(eq(1))
+      end
+  end
+
+
   describe(".all") do
     it("returns all entries, is empty at first") do
       expect(Word.all()).to(eq([]))

@@ -2,6 +2,7 @@ class Word
   @@words = []
 
   define_method(:initialize) do | word, type, syllable |
+    @id = @@words.length.+(1)
     @word = word
     @type = type
     @syllable = syllable
@@ -23,6 +24,10 @@ class Word
 
   define_method(:save) do
     @@words.push(self)
+  end
+
+  define_method(:id) do
+    @id
   end
 
   define_singleton_method(:all) do
