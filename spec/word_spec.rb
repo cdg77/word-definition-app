@@ -57,4 +57,15 @@ describe(Word) do
     end
   end
 
+  describe('.find') do
+    it('finds a word by id') do
+      test_word = Word.new('definition', 'noun', 'def i ni tion')
+      test_word.save()
+      test_word2 = Word.new('quaggy', 'adjective', 'quag·gy')
+      test_word2.save()
+      expect(Word.find(test_word2.id())).to(eq(test_word2))
+    end
+  end
+
+
 end

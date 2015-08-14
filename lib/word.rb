@@ -2,11 +2,12 @@ class Word
   @@words = []
 
   define_method(:initialize) do | word, type, syllable |
-    @id = @@words.length.+(1)
+
     @word = word
     @type = type
     @syllable = syllable
     @definition = []
+    @id = @@words.length().+(1)
   end
 
   define_method(:type) do
@@ -37,5 +38,16 @@ class Word
   define_singleton_method(:clear) do
     @@words = []
   end
+
+  define_singleton_method(:find) do |identifyer|
+    found_word = nil
+    @@words.each() do |word|
+      if word.id() == (identifyer.to_i())
+        found_word = word
+      end
+    end
+    found_word
+  end
+
 
 end
