@@ -8,3 +8,4 @@ describe('the path of word', {:type => :feature}) do
     visit('/')
     expect(page).to have_content("Words Defined")
   end
+end
