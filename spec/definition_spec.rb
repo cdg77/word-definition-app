@@ -45,7 +45,7 @@ describe(Definition) do
   end
 
   describe('.find') do
-    it('returns the contact by id') do
+    it('returns the definition by id') do
       test_definition = Definition.new({:definition =>  'a statement that describes what something is'})
       test_definition.save
       expect(Definition.find(1)).to(eq(test_definition))
